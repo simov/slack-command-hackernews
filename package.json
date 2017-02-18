@@ -1,6 +1,6 @@
 {
-  "name": "slash-commands",
-  "version": "0.0.0",
+  "name": "slack-command-hackernews",
+  "version": "1.0.0",
   "description": "Slash Commands",
   "private": true,
   "keywords": [],
@@ -13,13 +13,13 @@
   },
   "dependencies": {
     "@request/client": "^0.1.0",
-    "purest": "^3.0.0"
+    "purest": "^3.0.1"
   },
   "devDependencies": {},
-  "main": "",
+  "main": "./lib/",
   "files": [],
   "scripts": {},
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   }
 }
