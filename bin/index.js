@@ -33,7 +33,7 @@ server.use(logger('dev'))
 server.use(bodyParser.urlencoded({extended: true}))
 
 server.use((req, res) => {
-  hackernews(req, (err, attachments) => {
+  hackernews(req.body, (err, attachments) => {
     res.json({attachments})
   })
 })
