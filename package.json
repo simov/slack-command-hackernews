@@ -18,6 +18,7 @@
   "devDependencies": {
     "body-parser": "^1.17.0",
     "express": "^4.15.0",
+    "istanbul": "^0.4.5",
     "minimist": "^1.2.0",
     "mocha": "^3.2.0",
     "morgan": "^1.8.1"
@@ -27,7 +28,11 @@
   },
   "main": "./lib/",
   "files": [],
-  "scripts": {},
+  "scripts": {
+    "test": "npm run test-ci",
+    "test-ci": "mocha test/",
+    "test-cov": "istanbul cover _mocha"
+  },
   "engines": {
     "node": ">=6.0.0"
   }
