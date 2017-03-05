@@ -1,10 +1,19 @@
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 var t = require('assert')
-var http = require('http')
+var fs = require('fs')
+var path = require('path')
+var https = require('https')
 var request = require('@request/client')
 var purest = require('purest')({request, promise: Promise})
 var express = require('express')
 var command = require('../')
+
+var credentials = {
+  key: fs.readFileSync(path.resolve(__dirname, 'cert/private.pem'), 'utf8'),
+  cert: fs.readFileSync(path.resolve(__dirname, 'cert/public.pem'), 'utf8')
+}
 
 var fixtures = {
   stories: {
@@ -28,7 +37,7 @@ var hackernews = purest({
   provider: 'hackernews',
   config: {
     hackernews: {
-      'http://localhost:3000': {
+      'https://localhost:3000': {
         '{endpoint}': {
           __path: {
             alias: '__default'
@@ -38,9 +47,6 @@ var hackernews = purest({
     }
   }
 })
-
-var agent = new http.Agent({keepAlive: true, maxSockets: 2})
-
 
 describe('get', () => {
   var server
@@ -58,12 +64,13 @@ describe('get', () => {
         .filter((item) => item.id === parseInt(req.params.id))[0]
       )
     })
-    server = app.listen(3000, done)
+    server = https.createServer(credentials, app)
+    server.listen(3000, done)
   })
 
   it('new 5 default', (done) => {
     command
-      .get(hackernews, 'new', 5, agent)
+      .get(hackernews, 'new', 5)
       .then((attachments) => {
         t.deepEqual(attachments, fixtures.attachments.new)
         done()
@@ -73,7 +80,7 @@ describe('get', () => {
 
   it('best 25', (done) => {
     command
-      .get(hackernews, 'best', 5, agent)
+      .get(hackernews, 'best', 5)
       .then((attachments) => {
         t.deepEqual(attachments, fixtures.attachments.best)
         done()
@@ -83,7 +90,7 @@ describe('get', () => {
 
   it('top 2', (done) => {
     command
-      .get(hackernews, 'top', 2, agent)
+      .get(hackernews, 'top', 2)
       .then((attachments) => {
         t.deepEqual(attachments, fixtures.attachments.top)
         done()
@@ -92,7 +99,6 @@ describe('get', () => {
   })
 
   after((done) => {
-    agent.destroy()
     server.close(done)
   })
 })
