@@ -21,6 +21,9 @@
     "minimist": "^1.2.0",
     "morgan": "^1.8.1"
   },
+  "bin": {
+    "hackernews": "./bin/"
+  },
   "main": "./lib/",
   "files": [],
   "scripts": {},
