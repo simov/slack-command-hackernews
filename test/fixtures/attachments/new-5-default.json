@@ -1,0 +1,77 @@
+[
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "kiyanwang",
+    "author_link": "https://news.ycombinator.com/user?id=kiyanwang",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "Secrets of Maintainable Codebases",
+    "title_link": "https://blog.ndepend.com/secrets-maintainable-code-codebases/",
+    "text": "<https://news.ycombinator.com/item?id=13795677|0 comments>",
+    "footer": "Story (1 points)",
+    "ts": 1488716295,
+    "mrkdwn_in": [
+      "text"
+    ]
+  },
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "kiyanwang",
+    "author_link": "https://news.ycombinator.com/user?id=kiyanwang",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "Web Crawling with Node.js, it’s an interesting world",
+    "title_link": "https://crondev.wordpress.com/2017/03/05/web-crawling-with-nodejs-its-an-interesting-world/",
+    "text": "<https://news.ycombinator.com/item?id=13795661|0 comments>",
+    "footer": "Story (1 points)",
+    "ts": 1488715981,
+    "mrkdwn_in": [
+      "text"
+    ]
+  },
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "kiyanwang",
+    "author_link": "https://news.ycombinator.com/user?id=kiyanwang",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "JSON's Crockford envisions a post-JavaScript world",
+    "title_link": "http://www.infoworld.com/article/3176538/javascript/jsons-crockford-envisions-a-post-javascript-world.html",
+    "text": "<https://news.ycombinator.com/item?id=13795658|0 comments>",
+    "footer": "Story (1 points)",
+    "ts": 1488715885,
+    "mrkdwn_in": [
+      "text"
+    ]
+  },
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "Kikobeats",
+    "author_link": "https://news.ycombinator.com/user?id=Kikobeats",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "React Boilerplatinum, a react scaffold focused in developer experience",
+    "title_link": "https://github.com/Kikobeats/react-boilerplatinum#react-boilerplatinum",
+    "text": "<https://news.ycombinator.com/item?id=13795644|0 comments>",
+    "footer": "Story (2 points)",
+    "ts": 1488715580,
+    "mrkdwn_in": [
+      "text"
+    ]
+  },
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "lumannnn",
+    "author_link": "https://news.ycombinator.com/user?id=lumannnn",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "Phoenix v1.3.0-rc.0",
+    "title_link": "https://github.com/phoenixframework/phoenix/releases/tag/v1.3.0-rc.0",
+    "text": "<https://news.ycombinator.com/item?id=13795641|0 comments>",
+    "footer": "Story (1 points)",
+    "ts": 1488715529,
+    "mrkdwn_in": [
+      "text"
+    ]
+  }
+]

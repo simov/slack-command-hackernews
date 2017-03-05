@@ -1,0 +1,45 @@
+[
+  {
+    "by": "hunglee2",
+    "descendants": 59,
+    "id": 13795367,
+    "kids": [
+      13795556,
+      13795709,
+      13795528,
+      13795536,
+      13795585,
+      13795522,
+      13795508,
+      13795668,
+      13795693,
+      13795473,
+      13795513,
+      13795524,
+      13795505
+    ],
+    "score": 69,
+    "time": 1488709034,
+    "title": "When Factory Jobs Vanish, Men Become Less Desirable Partners",
+    "type": "story",
+    "url": "https://www.theatlantic.com/business/archive/2017/03/manufacturing-marriage…um=social&utm_source=linkedin.com&utm_campaign=buffer&amp;single_page=true"
+  },
+  {
+    "by": "amaneureka",
+    "descendants": 26,
+    "id": 13794879,
+    "kids": [
+      13795003,
+      13795014,
+      13795084,
+      13795067,
+      13794960,
+      13795222
+    ],
+    "score": 159,
+    "time": 1488695582,
+    "title": "Show HN: A new hobby OS from “scratch” in C#",
+    "type": "story",
+    "url": "https://github.com/amaneureka/AtomOS"
+  }
+]

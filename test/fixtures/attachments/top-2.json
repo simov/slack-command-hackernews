@@ -1,0 +1,32 @@
+[
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "hunglee2",
+    "author_link": "https://news.ycombinator.com/user?id=hunglee2",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "When Factory Jobs Vanish, Men Become Less Desirable Partners",
+    "title_link": "https://www.theatlantic.com/business/archive/2017/03/manufacturing-marriage…um=social&utm_source=linkedin.com&utm_campaign=buffer&amp;single_page=true",
+    "text": "<https://news.ycombinator.com/item?id=13795367|59 comments>",
+    "footer": "Story (69 points)",
+    "ts": 1488709034,
+    "mrkdwn_in": [
+      "text"
+    ]
+  },
+  {
+    "fallback": "HackerNews",
+    "color": "#ff6600",
+    "author_name": "amaneureka",
+    "author_link": "https://news.ycombinator.com/user?id=amaneureka",
+    "author_icon": "https://news.ycombinator.com/y18.gif",
+    "title": "Show HN: A new hobby OS from “scratch” in C#",
+    "title_link": "https://github.com/amaneureka/AtomOS",
+    "text": "<https://news.ycombinator.com/item?id=13794879|26 comments>",
+    "footer": "Story (159 points)",
+    "ts": 1488695582,
+    "mrkdwn_in": [
+      "text"
+    ]
+  }
+]

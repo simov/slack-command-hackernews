@@ -1,0 +1,52 @@
+[
+  {
+    "by": "kiyanwang",
+    "descendants": 0,
+    "id": 13795677,
+    "score": 1,
+    "time": 1488716295,
+    "title": "Secrets of Maintainable Codebases",
+    "type": "story",
+    "url": "https://blog.ndepend.com/secrets-maintainable-code-codebases/"
+  },
+  {
+    "by": "kiyanwang",
+    "descendants": 0,
+    "id": 13795661,
+    "score": 1,
+    "time": 1488715981,
+    "title": "Web Crawling with Node.js, it’s an interesting world",
+    "type": "story",
+    "url": "https://crondev.wordpress.com/2017/03/05/web-crawling-with-nodejs-its-an-interesting-world/"
+  },
+  {
+    "by": "kiyanwang",
+    "descendants": 0,
+    "id": 13795658,
+    "score": 1,
+    "time": 1488715885,
+    "title": "JSON's Crockford envisions a post-JavaScript world",
+    "type": "story",
+    "url": "http://www.infoworld.com/article/3176538/javascript/jsons-crockford-envisions-a-post-javascript-world.html"
+  },
+  {
+    "by": "Kikobeats",
+    "descendants": 0,
+    "id": 13795644,
+    "score": 2,
+    "time": 1488715580,
+    "title": "React Boilerplatinum, a react scaffold focused in developer experience",
+    "type": "story",
+    "url": "https://github.com/Kikobeats/react-boilerplatinum#react-boilerplatinum"
+  },
+  {
+    "by": "lumannnn",
+    "descendants": 0,
+    "id": 13795641,
+    "score": 1,
+    "time": 1488715529,
+    "title": "Phoenix v1.3.0-rc.0",
+    "type": "story",
+    "url": "https://github.com/phoenixframework/phoenix/releases/tag/v1.3.0-rc.0"
+  }
+]
