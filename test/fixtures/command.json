@@ -12,7 +12,7 @@
   "help": [
     {
       "fallback": "HackerNews",
-      "text": "`/hackernews` or `/hackernews new 5` - shows the 5 newest stories\n\n`/hackernews top 3` - shows the top 3 stories\n\n`/hackernews best 10` - shows the 10 best stories",
+      "text": "`/hackernews` or `/hackernews new 5` displays the 5 newest stories\n\n`/hackernews top 3` displays the top 3 stories\n\n`/hackernews best 10` displays the 10 best stories",
       "mrkdwn_in": [
         "text"
       ]
