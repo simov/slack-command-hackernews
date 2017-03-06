@@ -1,12 +1,10 @@
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 var t = require('assert')
 var fs = require('fs')
 var path = require('path')
 var https = require('https')
-var request = require('@request/client')
-var purest = require('purest')({request, promise: Promise})
 var express = require('express')
 var bodyParser = require('body-parser')
 var command = require('../')
@@ -65,7 +63,7 @@ describe('command', () => {
         .filter((item) => item.id === parseInt(req.params.id))[0]
       )
     })
-    app.post('/success', (req, res) => {
+    app.post('/response', (req, res) => {
       res.end('ok')
       callback(req.body)
     })
@@ -91,7 +89,7 @@ describe('command', () => {
 
   it('success', (done) => {
     command({token: '', purest})({token: '', text: 'top 2',
-      response_url: 'https://localhost:3000/success'
+      response_url: 'https://localhost:3000/response'
     })
       .then((attachment) => {
         t.deepEqual(attachment, fixtures.command.ok)
@@ -104,7 +102,7 @@ describe('command', () => {
 
   it('error', (done) => {
     command({token: '', purest})({token: '', text: 'top 3',
-      response_url: 'https://localhost:3000/success'
+      response_url: 'https://localhost:3000/response'
     })
       .then((attachment) => {
         t.deepEqual(attachment, fixtures.command.ok)

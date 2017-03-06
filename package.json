@@ -1,15 +1,15 @@
 {
   "name": "slack-command-hackernews",
   "version": "1.0.0",
-  "description": "Slash Commands",
+  "description": "HackerNews /slash Command for Slack",
   "private": true,
   "keywords": [],
   "license": "Apache-2.0",
-  "homepage": "https://github.com/simov/slack",
+  "homepage": "https://github.com/simov/slack-command-hackernews",
   "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (http://simov.github.io)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simov/slack.git"
+    "url": "https://github.com/simov/slack-command-hackernews.git"
   },
   "dependencies": {
     "@request/client": "^0.1.0",
@@ -17,6 +17,10 @@
   },
   "devDependencies": {
     "body-parser": "^1.17.0",
+    "eslint": "^3.17.0",
+    "eslint-config-standard": "^7.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1",
     "express": "^4.15.0",
     "istanbul": "^0.4.5",
     "minimist": "^1.2.0",
@@ -27,11 +31,18 @@
     "hackernews": "./bin/"
   },
   "main": "./lib/",
-  "files": [],
+  "files": [
+    "bin/",
+    "config/",
+    "lib/",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "test": "npm run test-ci",
+    "test": "npm run lint && npm run test-ci && echo Tests Passed",
     "test-ci": "mocha test/",
-    "test-cov": "istanbul cover _mocha"
+    "test-cov": "istanbul cover _mocha",
+    "lint": "eslint **/*.js && echo Lint Passed"
   },
   "engines": {
     "node": ">=6.0.0"

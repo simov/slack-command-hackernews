@@ -1,5 +1,5 @@
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 var t = require('assert')
 var fs = require('fs')
