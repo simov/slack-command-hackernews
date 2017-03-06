@@ -9,12 +9,15 @@ if (argv.help) {
   process.exit()
 }
 
-;['port', 'config'].forEach((key) => {
-  if (!argv[key]) {
-    console.error(`Specify --${key} number`)
-    process.exit()
-  }
-})
+if (!argv.port) {
+  console.error('Specify --port number')
+  process.exit()
+}
+
+if (!argv.config) {
+  console.error('Specify --config path/to/config.json')
+  process.exit()
+}
 
 
 var path = require('path')
