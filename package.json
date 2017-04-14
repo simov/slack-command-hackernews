@@ -6,26 +6,25 @@
   "keywords": [],
   "license": "Apache-2.0",
   "homepage": "https://github.com/simov/slack-command-hackernews",
-  "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (http://simov.github.io)",
+  "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (https://simov.github.io)",
   "repository": {
     "type": "git",
     "url": "https://github.com/simov/slack-command-hackernews.git"
   },
   "dependencies": {
     "@request/client": "^0.1.0",
+    "body-parser": "^1.17.0",
+    "express": "^4.15.0",
+    "minimist": "^1.2.0",
     "purest": "^3.0.1"
   },
   "devDependencies": {
-    "body-parser": "^1.17.0",
     "eslint": "^3.17.0",
     "eslint-config-standard": "^7.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
-    "express": "^4.15.0",
     "istanbul": "^0.4.5",
-    "minimist": "^1.2.0",
-    "mocha": "^3.2.0",
-    "morgan": "^1.8.1"
+    "mocha": "^3.2.0"
   },
   "bin": {
     "hackernews": "./bin/"
