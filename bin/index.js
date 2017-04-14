@@ -32,7 +32,10 @@ var server = express()
 server.use(parser.urlencoded({extended: true}))
 
 server.use((req, res) => {
-  hackernews(req.body)
+  console.log(new Date().getTime(), new Date().toString())
+  console.log(req.body)
+
+  hackernews(req.body, (status) => console.log(status))
     .then((attachments) => res.json({attachments}))
 })
 
