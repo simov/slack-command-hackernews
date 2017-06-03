@@ -2,7 +2,7 @@
 
 # slack-command-hackernews
 
-[![npm-version]][npm] [![travis-ci]][travis] [![coveralls-status]][coveralls] [![codecov-status]][codecov]
+[![npm-version]][npm] [![travis-ci]][travis] [![coveralls-status]][coveralls]
 
 The HackerNews Slash Command for Slack can be used as [Standalone Server][standalone-server] or as a [Middleware][middleware] in any HTTP Server Framework.
 
