@@ -2,8 +2,7 @@
   "name": "slack-command-hackernews",
   "version": "1.0.0",
   "description": "HackerNews /slash Command for Slack",
-  "private": true,
-  "keywords": [],
+  "keywords": ["slack", "hackernews"],
   "license": "Apache-2.0",
   "homepage": "https://github.com/simov/slack-command-hackernews",
   "author": "Simeon Velichkov <simeonvelichkov@gmail.com> (https://simov.github.io)",
@@ -16,9 +15,10 @@
     "body-parser": "^1.17.0",
     "express": "^4.15.0",
     "minimist": "^1.2.0",
-    "purest": "^3.0.1"
+    "purest": "^3.1.0"
   },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^3.17.0",
     "eslint-config-standard": "^7.0.0",
     "eslint-plugin-promise": "^3.5.0",
@@ -27,7 +27,7 @@
     "mocha": "^3.2.0"
   },
   "bin": {
-    "hackernews": "./bin/"
+    "slack-command-hackernews": "./bin/"
   },
   "main": "./lib/",
   "files": [
