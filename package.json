@@ -4,7 +4,8 @@
   "description": "HackerNews /slash Command for Slack",
   "keywords": [
     "slack",
-    "hackernews"
+    "hackernews",
+    "command"
   ],
   "license": "Apache-2.0",
   "homepage": "https://github.com/simov/slack-command-hackernews",
@@ -14,39 +15,37 @@
     "url": "https://github.com/simov/slack-command-hackernews.git"
   },
   "dependencies": {
-    "@request/client": "^0.1.0",
-    "body-parser": "^1.17.0",
-    "express": "^4.15.0",
-    "minimist": "^1.2.0",
-    "purest": "^3.1.0"
+    "request-compose": "0.0.10"
   },
   "devDependencies": {
-    "coveralls": "^2.13.1",
-    "eslint": "^3.17.0",
-    "eslint-config-standard": "^7.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "body-parser": "^1.18.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "express": "^4.16.3",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^5.0.5",
+    "request-logs": "0.0.5"
   },
-  "bin": {
-    "slack-command-hackernews": "./bin/"
-  },
-  "main": "./lib/",
+  "main": "./index.js",
   "files": [
-    "bin/",
-    "config/",
     "lib/",
+    "index.js",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "package.json"
   ],
   "scripts": {
-    "test": "npm run lint && npm run test-ci && echo Tests Passed",
-    "test-ci": "mocha test/",
-    "test-cov": "istanbul cover _mocha",
-    "lint": "eslint **/*.js && echo Lint Passed"
+    "lint": "eslint lib/ test/",
+    "test": "npm run lint && npm run test:ci",
+    "test:ci": "mocha test/",
+    "test:cov": "istanbul cover _mocha"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   }
 }

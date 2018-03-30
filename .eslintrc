@@ -7,19 +7,28 @@
 
   // Almost Standard
   rules: {
+    // Disable: Closing curly brace does not appear on the same line as the subsequent block
+    'brace-style': [2, 'stroustrup'],
+
+    // Require or disallow trailing commas
+    'comma-dangle': 'off',
+
+    // Config: Enforce consistent indentation
+    'indent': ['error', 2, {'flatTernaryExpressions': true}],
+
+    // Disable: More than 1 blank line not allowed
+    'no-multiple-empty-lines': 'off',
+
     // Unexpected use of comma operator
     'no-sequences': 'off',
 
     // Disable: Object properties must go on a new line if they aren't all on the same line
     'object-property-newline': 'off',
 
+    // Disable: Enforce consistent linebreak style for operators
+    'operator-linebreak': 'off',
+
     // Disable: Block must not be padded by blank lines
-    'padded-blocks': 'off',
-
-    // Disable: More than 1 blank line not allowed
-    'no-multiple-empty-lines': 'off',
-
-    // Disable: Closing curly brace does not appear on the same line as the subsequent block
-    'brace-style': [2, 'stroustrup']
+    'padded-blocks': 'off'
   }
 }
