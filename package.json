@@ -1,6 +1,6 @@
 {
   "name": "slack-command-hackernews",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "HackerNews /slash Command for Slack",
   "keywords": [
     "slack",
