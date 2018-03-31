@@ -62,7 +62,7 @@ describe('hackernews', () => {
   })
 
   it('invalid token', () => {
-    var config = {
+    var auth = {
       token: 'hey'
     }
     var input = {
@@ -70,14 +70,14 @@ describe('hackernews', () => {
     }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.invalid},
       'should respond with `invalid` attachment'
     )
   })
 
   it('help', () => {
-    var config = {
+    var auth = {
       token: 'hey'
     }
     var input = {
@@ -86,25 +86,27 @@ describe('hackernews', () => {
     }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.help},
       'should respond with `help` attachment'
     )
   })
 
   it('new 5 - default', async () => {
-    var config = {
-      token: 'hey',
-      origin: 'https://localhost:5000'
+    var auth = {
+      token: 'hey'
     }
     var input = {
       token: 'hey',
       text: 'new 5',
       response_url: 'https://localhost:5000/response'
     }
+    var config = {
+      origin: 'https://localhost:5000'
+    }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.ok},
       'should respond with `ok` attachment'
     )
@@ -115,7 +117,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query(config, input),
+        await hackernews.query({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -126,18 +128,20 @@ describe('hackernews', () => {
   })
 
   it('best 25', async () => {
-    var config = {
-      token: 'hey',
-      origin: 'https://localhost:5000'
+    var auth = {
+      token: 'hey'
     }
     var input = {
       token: 'hey',
       text: 'best 25',
       response_url: 'https://localhost:5000/response'
     }
+    var config = {
+      origin: 'https://localhost:5000'
+    }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.ok},
       'should respond with `ok` attachment'
     )
@@ -148,7 +152,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query(config, input),
+        await hackernews.query({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -159,18 +163,20 @@ describe('hackernews', () => {
   })
 
   it('top 2', async () => {
-    var config = {
-      token: 'hey',
-      origin: 'https://localhost:5000'
+    var auth = {
+      token: 'hey'
     }
     var input = {
       token: 'hey',
       text: 'top 2',
       response_url: 'https://localhost:5000/response'
     }
+    var config = {
+      origin: 'https://localhost:5000'
+    }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.ok},
       'should respond with `ok` attachment'
     )
@@ -181,7 +187,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query(config, input),
+        await hackernews.query({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -192,18 +198,20 @@ describe('hackernews', () => {
   })
 
   it('error', async () => {
-    var config = {
-      token: 'hey',
-      origin: 'https://localhost:5000'
+    var auth = {
+      token: 'hey'
     }
     var input = {
       token: 'hey',
       text: 'top 3',
       response_url: 'https://localhost:5000/response'
     }
+    var config = {
+      origin: 'https://localhost:5000'
+    }
 
     t.deepEqual(
-      hackernews.response(config, input),
+      hackernews.respond({auth, input}),
       {attachments: fixtures.command.ok},
       'should respond with `ok` attachment'
     )
@@ -213,7 +221,7 @@ describe('hackernews', () => {
     }
 
     try {
-      await hackernews.query(config, input)
+      await hackernews.query({auth, input, config})
       return Promise.reject(new Error('Should throw an error'))
     }
     catch (err) {

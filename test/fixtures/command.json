@@ -3,16 +3,16 @@
     {
       "fallback": "HackerNews",
       "color": "danger",
-      "pretext": "> Invalid token!",
+      "text": "Invalid token!",
       "mrkdwn_in": [
-        "pretext"
+        "text"
       ]
     }
   ],
   "help": [
     {
       "fallback": "HackerNews",
-      "text": "`/hackernews` or `/hackernews new 5` displays the 5 newest stories\n\n`/hackernews top 3` displays the top 3 stories\n\n`/hackernews best 10` displays the 10 best stories",
+      "text": "*/hackernews* - defaults to the 5 newest stories\n\n*/hackernews* _new 5_ - the 5 newest stories\n\n*/hackernews* _top 3_ - the top 3 stories\n\n*/hackernews* _best 10_ - the 10 best stories",
       "mrkdwn_in": [
         "text"
       ]
@@ -31,9 +31,9 @@
     {
       "fallback": "HackerNews",
       "color": "danger",
-      "pretext": "> Internal error!",
+      "text": "Internal error!",
       "mrkdwn_in": [
-        "pretext"
+        "text"
       ]
     }
   ]

@@ -6,24 +6,43 @@
 
 > HackerNews /slash Command for Slack
 
+## server
+
 ```js
-var hackernews = require('slack-command-hackernews')
 var express = require('express')
 var parser = require('body-parser')
 
-var config = {token: '[OAuth App Verification Token]'}
+var hackernews = require('slack-command-hackernews')
+var path = require('path')
+var auth = require(path.resolve(process.cwd(), process.argv[2]))
 
-var server = express()
-server.use(parser.urlencoded({extended: true}))
-server.use(parser.json())
 
-server.use('/hackernews', (req, res) => {
-  res.json(hackernews.response(config, req.body))
-  hackernews.query(config, req.body).catch(console.error)
-})
-
-server.listen(3000)
+express()
+  .use(parser.urlencoded({extended: true}))
+  .use(parser.json())
+  .use('/hackernews', (req, res) => {
+    var input = req.body
+    res.json(hackernews.respond({auth, input}))
+    hackernews.query({auth, input}).catch(console.error)
+  })
+  .listen(3000)
 ```
+
+## auth
+
+```json
+{
+  "token": "hook token"
+}
+```
+
+## script
+
+```bash
+node server.js ~/path/to/auth.json
+```
+
+## command
 
 Option                | Value
 :--                   | :--
@@ -32,6 +51,7 @@ Request URL           | `https://website.com/hackernews`
 Short Description     | `Query HackerNews`
 Usage Hing            | `[new|top|best] [count]`
 
+## example
 
 Command               | Description
 :--                   | :--
