@@ -14,6 +14,10 @@ module.exports = {
       attachment.ok()
   }),
   query: async (config, input) => {
+    if (config.token !== input.token || input.text === 'help') {
+      return
+    }
+
     var {stream, limit} = params(input.text)
 
     var agent = new https.Agent({keepAlive: true, maxSockets: 2})
