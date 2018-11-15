@@ -15,7 +15,7 @@
     "url": "https://github.com/simov/slack-command-hackernews.git"
   },
   "dependencies": {
-    "request-compose": "0.0.10"
+    "request-compose": "^1.0.0"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
