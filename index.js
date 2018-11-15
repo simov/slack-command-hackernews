@@ -14,7 +14,7 @@ var respond = ({auth, input}) => ({
 })
 
 
-var query = ({auth, input, config = {}, agent, stream, limit}) => compose(
+var _query = ({auth, input, config = {}, agent, stream, limit}) => compose(
   _ => request({
     url: (config.origin || 'https://hacker-news.firebaseio.com') +
       `/v0/${stream}stories.json`,
@@ -43,28 +43,35 @@ var query = ({auth, input, config = {}, agent, stream, limit}) => compose(
 )()
 
 
-module.exports = {
-  respond,
-  query: async ({auth, input, config}) => {
-    if (auth.token !== input.token || input.text === 'help') {
-      return
-    }
+var query = async ({auth, input, config}) => {
+  if (auth.token !== input.token || input.text === 'help') {
+    return
+  }
 
-    var agent = new https.Agent({keepAlive: true, maxSockets: 2})
+  var agent = new https.Agent({keepAlive: true, maxSockets: 2})
 
-    try {
-      await query(Object.assign({auth, input, config, agent}, params(input.text)))
-    }
-    catch (err) {
-      request({
-        method: 'POST',
-        url: input.response_url,
-        json: {attachments: attachment.error('Internal error!')}
-      })
-      throw err
-    }
-    finally {
-      agent.destroy()
-    }
+  try {
+    await _query(Object.assign({auth, input, config, agent}, params(input.text)))
+  }
+  catch (err) {
+    request({
+      method: 'POST',
+      url: input.response_url,
+      json: {attachments: attachment.error('Internal error!')}
+    })
+    throw err
+  }
+  finally {
+    agent.destroy()
   }
 }
+
+
+var mw = (auth) => (req, res) => {
+  res.json(respond({auth, input: req.body}))
+  query({auth, input: req.body})
+    .catch(console.error)
+}
+
+
+module.exports = Object.assign(mw, {respond, query})
