@@ -117,7 +117,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query({auth, input, config}),
+        await hackernews.execute({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -152,7 +152,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query({auth, input, config}),
+        await hackernews.execute({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -187,7 +187,7 @@ describe('hackernews', () => {
 
     try {
       t.equal(
-        await hackernews.query({auth, input, config}),
+        await hackernews.execute({auth, input, config}),
         undefined,
         'should resolve with undefined'
       )
@@ -221,7 +221,7 @@ describe('hackernews', () => {
     }
 
     try {
-      await hackernews.query({auth, input, config})
+      await hackernews.execute({auth, input, config})
       return Promise.reject(new Error('Should throw an error'))
     }
     catch (err) {

@@ -6,40 +6,34 @@
 
 > HackerNews /slash Command for Slack
 
-## server
+## middleware
+
+```js
+var express = require('express')
+var hackernews = require('slack-command-hackernews')
+var auth = {token: 'hook token'}
+
+express()
+  .use(hackernews(auth))
+  .listen(3000)
+```
+
+## api
 
 ```js
 var express = require('express')
 var parser = require('body-parser')
-
 var hackernews = require('slack-command-hackernews')
-var path = require('path')
-var auth = require(path.resolve(process.cwd(), process.argv[2]))
-
+var auth = {token: 'hook token'}
 
 express()
   .use(parser.urlencoded({extended: true}))
-  .use(parser.json())
-  .use('/hackernews', (req, res) => {
+  .use((req, res) => {
     var input = req.body
     res.json(hackernews.respond({auth, input}))
     hackernews.query({auth, input}).catch(console.error)
   })
   .listen(3000)
-```
-
-## auth
-
-```json
-{
-  "token": "hook token"
-}
-```
-
-## script
-
-```bash
-node server.js ~/path/to/auth.json
 ```
 
 ## command
@@ -49,7 +43,7 @@ Option                | Value
 Command               | `/hackernews`
 Request URL           | `https://website.com/hackernews`
 Short Description     | `Query HackerNews`
-Usage Hing            | `[new|top|best] [count]`
+Usage Hint            | `[new|top|best] [count]`
 
 ## example
 
